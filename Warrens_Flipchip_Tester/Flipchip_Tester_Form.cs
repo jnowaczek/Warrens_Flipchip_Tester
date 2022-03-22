@@ -409,11 +409,11 @@ namespace Warrens_Flipchip_Tester
             catch (FlipchipTesterException ex)
             {
                 SystemSounds.Asterisk.Play();
-
                 if (ex.Reason == FlipChipTestResult.VppPowerIsOff)
                 {
                     TesterRichTextBox.Text = "The Vpp Power to the FlipChip is not turned on.\n\n";
                     TesterRichTextBox.Text += "Flip the toggle switch and make sure that the amber LED for UUT_PWR goes on.\n";
+                    SystemSounds.Asterisk.Play();
                 }
 
                 if (ex.Reason == FlipChipTestResult.FinishedWithTests) //We should only get here if we try to process a test vector number that is higher than what we have
@@ -489,6 +489,7 @@ namespace Warrens_Flipchip_Tester
             }
             catch (FlipchipTesterException ex)
             {
+                SystemSounds.Asterisk.Play();
                 if (ex.Reason == FlipChipTestResult.VppPowerIsOff)
                 {
                     TesterRichTextBox.Text = "The Vpp Power to the FlipChip is not turned on.\n\n";
