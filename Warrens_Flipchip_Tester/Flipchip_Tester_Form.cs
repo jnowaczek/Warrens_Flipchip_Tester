@@ -408,6 +408,8 @@ namespace Warrens_Flipchip_Tester
             }
             catch (FlipchipTesterException ex)
             {
+                SystemSounds.Asterisk.Play();
+
                 if (ex.Reason == FlipChipTestResult.VppPowerIsOff)
                 {
                     TesterRichTextBox.Text = "The Vpp Power to the FlipChip is not turned on.\n\n";
